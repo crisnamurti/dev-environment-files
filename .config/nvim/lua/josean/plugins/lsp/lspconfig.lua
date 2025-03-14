@@ -107,6 +107,19 @@ return {
           filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
         })
       end,
+      ["pyright"] = function()
+        -- configure python server
+        lspconfig["pyright"].setup({
+          capabilities = capabilities,
+        })
+      end,
+      ["gopls"] = function()
+        -- configure golang server
+        lspconfig["gopls"].setup({
+          capabilities = capabilities,
+          filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        })
+      end,
       ["emmet_ls"] = function()
         -- configure emmet language server
         lspconfig["emmet_ls"].setup({
@@ -134,4 +147,3 @@ return {
     })
   end,
 }
-
